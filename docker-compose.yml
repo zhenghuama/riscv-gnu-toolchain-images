@@ -1,0 +1,12 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BASE_OS: ubuntu
+        BASE_DISTRO: jammy
+    image: z.ma/caliptra-riscv-verilator:dev
+    container_name: caliptra-riscv-veri-dev
+    stdin_open: true
+    tty: true
