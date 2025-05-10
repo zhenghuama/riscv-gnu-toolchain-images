@@ -8,5 +8,14 @@ services:
         BASE_DISTRO: jammy
     image: z.ma/caliptra-riscv-verilator:dev
     container_name: caliptra-riscv-veri-dev
+    volumes:
+      - ../caliptra-workspace:/home/caliptra-usr/caliptra-workspace
+    working_dir: /home/caliptra-usr/caliptra-workspace
+    environment:
+      - CALIPTRA_WORKSPACE
+      - CALIPTRA_ROOT
+      - TESTNAME
+      - ADAMSBRIDGE_ROOT
+      - CALIPTRA_AXI4PC_DIR
     stdin_open: true
     tty: true
